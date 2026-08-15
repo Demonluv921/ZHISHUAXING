@@ -1,0 +1,34 @@
+# 智刷星 · Render 部署声明（免费 Web Service）
+#
+# 用法（二选一）：
+#   1) 在 Render 控制台「New → Blueprint」，选本仓库，自动按此文件建服务；
+#   2) 或「New → Web Service」手动建，构建/启动命令见下。
+#
+# ⚠️ 安全：LLM_API_KEY 等密钥请在 Render 控制台 Environment 里「手动填」，
+#          不要写进本文件或提交到仓库（.gitignore 已排除 .env）。
+
+services:
+  - type: web
+    name: zhishuaxing
+    runtime: python
+    plan: free                 # 免费档：休眠后首次访问有冷启动（约 30~50s）
+    region: oregon             # 免费档可用区域；如需离国内更近可改 singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    healthCheckPath: /         # server.py 的 GET / 返回首页，作为健康检查
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: BIND_HOST
+        value: "0.0.0.0"       # 必须监听 0.0.0.0，Render 才能转发
+      - key: PORT
+        sync: false            # 由 Render 平台自动注入
+      - key: LLM_BASE_URL
+        value: "https://open.bigmodel.cn/api/paas/v4"
+      - key: LLM_MODEL
+        value: "glm-4-flash"
+      # ↓↓↓ 以下为密钥，务必在 Render 控制台「手动填」后部署 ↓↓↓
+      - key: LLM_API_KEY
+        sync: false
+      - key: SITE_TOKEN        # 强烈建议设置，防止公网链接泄露被刷额度
+        sync: false

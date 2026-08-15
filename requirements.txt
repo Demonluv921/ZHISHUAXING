@@ -1,0 +1,6 @@
+# 智刷星 · 后端依赖（部署到云主机 / 虚拟环境时安装）
+pypdf
+python-docx
+pillow
+numpy
+rapidocr-onnxruntime

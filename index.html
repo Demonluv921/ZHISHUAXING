@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智刷星 · AI 专业课智能刷题平台</title>
+  <meta name="description" content="智刷星 —— 面向全国理工科大学生的 AI 专业课智能刷题平台。知识图谱诊断薄弱点，动态推荐个性化练习，AI 苏格拉底式逐步解析，做你专属的 AI 学习伙伴。" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>" />
+</head>
+<body>
+  <!-- ============ 导航 ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top">
+        <span class="brand__logo" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="34" height="34">
+            <defs>
+              <linearGradient id="starG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#6366f1"/>
+                <stop offset="1" stop-color="#22d3ee"/>
+              </linearGradient>
+            </defs>
+            <path d="M24 3l5.5 12.4L43 17l-9.7 9 2.6 13.6L24 33.7 12.1 39.6 14.7 26 5 17l13.5-1.6z" fill="url(#starG)"/>
+            <circle cx="24" cy="24" r="3.4" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="brand__name">智刷星</span>
+        <span class="brand__sub">Zhishua Star</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#features">核心功能</a>
+        <a href="#pain">用户痛点</a>
+        <a href="#diagnose">诊断体验</a>
+        <a href="#socratic">AI 讲题</a>
+        <a href="#mock">模拟卷</a>
+        <a href="#selfbank">自带题库</a>
+        <a href="#team">团队</a>
+        <a href="#tech">技术</a>
+      </nav>
+      <a href="#diagnose" class="btn btn--primary nav__cta">免费开始诊断</a>
+      <button class="nav__toggle" id="navToggle" aria-label="菜单">☰</button>
+    </div>
+  </header>
+
+  <!-- ============ Hero ============ -->
+  <section class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <span class="pill">🎓 面向全国理工科大学生 · AI + 专业课学习</span>
+        <h1 class="hero__title">智刷星<br/><span class="grad">懂你的 AI 专业课学习伙伴</span></h1>
+        <p class="hero__lead">
+          不是“题库最全”，而是“最懂你”。智刷星用<strong>知识图谱</strong>诊断你的知识盲区，
+          用<strong>AI 动态推荐</strong>为你定制练习，用<strong>苏格拉底式讲题</strong>一步步带你理解——
+          把“没题做、做了不懂、无人讲”的复习困境，变成“诊断 → 练习 → 理解”的闭环。
+        </p>
+        <div class="hero__actions">
+          <a href="#diagnose" class="btn btn--primary btn--lg">体验知识图谱诊断 →</a>
+          <a href="#features" class="btn btn--ghost btn--lg">了解核心功能</a>
+        </div>
+        <div class="hero__trust">
+          <span>🏫 华中科技大学未来技术学院</span>
+          <span>🚀 创客训练营 · 智刷队</span>
+          <span>⭐ 创客竞赛选题</span>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="float-card float-card--1">
+          <div class="fc__title">知识图谱诊断</div>
+          <div class="fc__bar"><i style="width:38%"></i></div>
+          <div class="fc__hint">已识别 3 个薄弱点</div>
+        </div>
+        <div class="float-card float-card--2">
+          <div class="fc__title">AI 讲题 · 引导式</div>
+          <div class="fc__row">“你觉得这里该用哪个定理？”</div>
+          <div class="fc__row fc__row--bot">“嗯…是不是全概率公式？”</div>
+        </div>
+        <div class="float-card float-card--3">
+          <div class="fc__title">今日推荐</div>
+          <div class="fc__chips"><span>贝叶斯</span><span>期望方差</span><span>协方差</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__wave" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ 用户痛点 / 洞察 ============ -->
+  <section class="section pain" id="pain">
+    <div class="section__head">
+      <span class="tag">真实洞察</span>
+      <h2>期末复习，大学生到底卡在哪？</h2>
+      <p>我们对 3 位理工科同学做了深度访谈 + 情境观察 + 沉浸式体验，发现了被忽视的真相。</p>
+    </div>
+    <div class="quote-grid">
+      <figure class="quote">
+        <blockquote>“我们专业课的题库资源太匮乏了，网上搜到的答案很多是错的，而且没人根据我的错题推荐类似的题。”</blockquote>
+        <figcaption>— 自动化学院 · 小李（深度访谈）</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>在通用刷题 APP 里搜“暂无相关题目”，又开了 3 个网页找题，15 分钟还没找到满意的。</blockquote>
+        <figcaption>— 船舶与海洋学院 · 小杨（情境观察）</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“有些题看了答案还是不懂，要是能有个 AI 助手一步步给我讲思路就好了，而不是直接给答案。”</blockquote>
+        <figcaption>— 未来技术学院 · 小吴（沉浸式体验）</figcaption>
+      </figure>
+    </div>
+    <div class="insight">
+      <div class="insight__item">
+        <div class="insight__num">🔴</div>
+        <h3>题目稀缺且分散</h3>
+        <p>专业课内容专业、受众窄，商业平台缺乏建设动力；教材 + 往年卷远不够刷。</p>
+      </div>
+      <div class="insight__item">
+        <div class="insight__num">🔴</div>
+        <h3>遇到难题无人讲</h3>
+        <p>搜题软件只给答案不讲思路，期末高峰师生比有限，一对一答疑是奢望。</p>
+      </div>
+      <div class="insight__item insight__item--gold">
+        <div class="insight__num">⭐</div>
+        <h3>意外发现：要的是“被理解”</h3>
+        <p>学生渴望的并非更多题目，而是<strong>“被理解的学习路径”</strong>。差异化方向 = “AI 更懂我”。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 核心功能 ============ -->
+  <section class="section features" id="features">
+    <div class="section__head">
+      <span class="tag">核心功能</span>
+      <h2>三大入选方案，构成一个学习闭环</h2>
+      <p>从“诊断薄弱点”到“引导式理解”，再到“考前精准冲刺”，智刷星覆盖复习全流程。</p>
+    </div>
+    <div class="feature-cards">
+      <article class="fcard fcard--main">
+        <div class="fcard__icon">🕸️</div>
+        <h3>知识图谱智能诊断</h3>
+        <p class="fcard__desc">用少量测试题（10–15 道）快速绘制你的专业课知识图谱，薄弱点自动标红，生成专属复习路径图。</p>
+        <ul class="fcard__list">
+          <li>构建专业课知识图谱（如 50+ 知识点）</li>
+          <li>AI 诊断知识盲区，可视化呈现</li>
+          <li>按图索骥，复习不再没方向</li>
+        </ul>
+        <a href="#diagnose" class="fcard__link">立即体验诊断 →</a>
+      </article>
+      <article class="fcard fcard--main">
+        <div class="fcard__icon">🤖</div>
+        <h3>AI 苏格拉底式讲题</h3>
+        <p class="fcard__desc">遇到难题不直接给答案，而是用引导式提问（“你觉得该用哪个定理？”）一步步启发你自己想通。</p>
+        <ul class="fcard__list">
+          <li>促进深层理解，而非死记答案</li>
+          <li>对比直接给答案，理解度显著提升</li>
+          <li>培养元认知能力，做“学习伙伴”</li>
+        </ul>
+        <a href="#socratic" class="fcard__link">看看怎么讲 →</a>
+      </article>
+      <article class="fcard fcard--main">
+        <div class="fcard__icon">📝</div>
+        <h3>考前冲刺模拟卷</h3>
+        <p class="fcard__desc">AI 根据你的历史答题数据与课程重点，自动生成高度个性化的模拟卷，精准覆盖薄弱环节与高频考点。</p>
+        <ul class="fcard__list">
+          <li>个性化组卷，告别“通用卷不对症”</li>
+          <li>薄弱点 + 高频考点双重覆盖</li>
+          <li>考前一周，全面自检底气足</li>
+        </ul>
+        <a href="#mock" class="fcard__link">生成我的模拟卷 →</a>
+      </article>
+    </div>
+
+    <h3 class="subhead">更多已在规划中的能力</h3>
+    <div class="mini-grid">
+      <div class="mini"><span>🧭</span><div><b>错题智能归因</b><br/>区分概念不清 / 计算失误 / 审题偏差</div></div>
+      <div class="mini"><span>🔗</span><div><b>跨课程知识关联</b><br/>识别课程间关联，设计综合题</div></div>
+      <div class="mini"><span>⚔️</span><div><b>组队 PK 刷题</b><br/>同水平匹配，竞争激发动力</div></div>
+      <div class="mini"><span>🎙️</span><div><b>语音交互速测</b><br/>碎片时间语音出题作答</div></div>
+      <div class="mini"><span>🛠️</span><div><b>项目实战练习</b><br/>把知识点嵌入真实工程场景</div></div>
+      <div class="mini"><span>📊</span><div><b>学习数据看板</b><br/>薄弱点趋势与保持率追踪</div></div>
+    </div>
+  </section>
+
+  <!-- ============ 数据亮点 ============ -->
+  <section class="section stats">
+    <div class="section__head section__head--light">
+      <span class="tag tag--light">为什么值得做</span>
+      <h2>一个真实且普遍的需求</h2>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="stat__num" data-target="500" data-suffix="万+">0</div><div class="stat__label">全国理工科大学生潜在用户</div></div>
+      <div class="stat"><div class="stat__num" data-target="80" data-suffix="%">0</div><div class="stat__label">期末面临专业课题目匮乏</div></div>
+      <div class="stat"><div class="stat__num" data-target="70" data-suffix="%">0</div><div class="stat__label">AI 诊断与人工评估一致性目标</div></div>
+      <div class="stat"><div class="stat__num" data-target="3" data-suffix="步">0</div><div class="stat__label">诊断→推荐→理解 闭环</div></div>
+    </div>
+  </section>
+
+  <!-- ============ 诊断体验（核心互动） ============ -->
+  <section class="section diagnose" id="diagnose">
+    <div class="section__head">
+      <span class="tag">核心互动体验</span>
+      <h2>体验一次知识图谱诊断</h2>
+      <p>跟着 MVP 流程走一遍：选课 → 完成针对性诊断题 → 看知识图谱（薄弱点标红）→ 拿个性化复习路径。已覆盖数学、物理化学、计算机、工程等多门理工科课程。</p>
+    </div>
+
+    <div class="diag">
+      <!-- 步骤指示 -->
+      <ol class="steps" id="steps">
+        <li class="steps__item is-active" data-step="0">1 · 选课程</li>
+        <li class="steps__item" data-step="1">2 · 做诊断</li>
+        <li class="steps__item" data-step="2">3 · 看图谱</li>
+        <li class="steps__item" data-step="3">4 · 拿路径</li>
+      </ol>
+
+      <!-- 步骤 0：选课 -->
+      <div class="diag__panel" id="panel-course">
+        <h3 class="diag__title">选择要诊断的课程</h3>
+        <div class="course-grid" id="courseGrid"></div>
+        <div class="diag__nav">
+          <button class="btn btn--primary" id="startQuiz" disabled>开始诊断（10 题）</button>
+        </div>
+      </div>
+
+      <!-- 步骤 1：答题 -->
+      <div class="diag__panel hidden" id="panel-quiz">
+        <div class="quiz__bar">
+          <div class="quiz__progress"><i id="quizProgress"></i></div>
+          <span class="quiz__count" id="quizCount">第 1 / 10 题</span>
+        </div>
+        <div id="quizStage"></div>
+      </div>
+
+      <!-- 步骤 2 & 3：结果与图谱 -->
+      <div class="diag__panel hidden" id="panel-result">
+        <div class="result__grid">
+          <div class="result__graph">
+            <h3 class="diag__title">你的概率论知识图谱</h3>
+            <div class="graph-wrap">
+              <svg id="kgraph" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid meet"></svg>
+              <div class="graph-legend">
+                <span><i class="dot dot--strong"></i>掌握较好</span>
+                <span><i class="dot dot--mid"></i>一般</span>
+                <span><i class="dot dot--weak"></i>薄弱（标红）</span>
+                <span><i class="dot dot--untest"></i>本次未覆盖</span>
+              </div>
+            </div>
+          </div>
+          <div class="result__side">
+            <div class="result__score">
+              <div class="result__score-num" id="scoreNum">0</div>
+              <div class="result__score-label">诊断得分</div>
+            </div>
+            <h3 class="diag__title">个性化复习路径推荐</h3>
+            <ol class="path" id="pathList"></ol>
+            <div class="result__actions">
+              <a href="#socratic" class="btn btn--ghost">用 AI 讲一道薄弱题</a>
+              <a href="#mock" class="btn btn--primary">生成冲刺模拟卷</a>
+            </div>
+          </div>
+        </div>
+        <div class="diag__nav">
+          <button class="btn btn--ghost" id="restartDiag">重新诊断</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 苏格拉底式讲题 ============ -->
+  <section class="section socratic" id="socratic">
+    <div class="section__head">
+      <span class="tag">AI 苏格拉底式讲题</span>
+      <h2>不讲答案，只带你“想通”</h2>
+      <p>这是报告里的差异化亮点：AI 像老师一样用提问引导你推理，而不是直接丢答案。</p>
+    </div>
+    <div class="socrat">
+      <div class="socrat__chat" id="socratChat">
+        <div class="msg msg--bot">你好，我是你的 AI 学习伙伴 ⭐ 把不会的题发给我，我会一步步引导你，而不是直接给答案。</div>
+        <div class="msg msg--user">这题：设甲厂占 60%（良品率 95%）、乙厂占 40%（良品率 90%），取到良品来自甲厂的概率？</div>
+        <div class="msg msg--bot">好题。先别急着算，我们拆一下：你现在已经知道哪些信息？</div>
+        <div class="msg msg--user">知道两个厂的占比，还有各自出良品的概率。</div>
+        <div class="msg msg--bot">对。那“取到良品来自甲厂”这件事，在概率里该怎么描述？试着用条件概率的符号写写看。</div>
+        <div class="msg msg--user">应该是 P(甲厂 | 良品)？</div>
+        <div class="msg msg--bot">完全正确 👍 那要把它算出来，你还缺什么？提示：想一想“全概率”能给你什么。</div>
+        <div class="msg msg--user">缺 P(良品) 总概率，可以用全概率公式把两厂加起来算出来！</div>
+        <div class="msg msg--bot">漂亮！你现在离答案只差一步了——把它代进贝叶斯公式试试，结果大概是多少？</div>
+        <div class="msg msg--user">0.57 / 0.93 ≈ 0.613，所以是约 61.3%。</div>
+        <div class="msg msg--bot">答对了 🎉 你看，答案你自己推出来了，印象是不是比直接看解析深得多？</div>
+      </div>
+      <div class="socrat__input">
+        <input id="socratInput" type="text" placeholder="输入你的想法，或直接问 AI 一道题…（演示：回车发送）" />
+        <button class="btn btn--primary" id="socratSend">发送</button>
+      </div>
+      <p class="socrat__note">※ 以上为脚本化演示。真实产品中由大语言模型驱动引导式对话，逐步启发而非直接给答案。</p>
+    </div>
+  </section>
+
+  <!-- ============ 考前冲刺模拟卷 ============ -->
+  <section class="section mock" id="mock">
+    <div class="section__head">
+      <span class="tag">考前冲刺模拟卷</span>
+      <h2>为你生成一份“对症下药”的模拟卷</h2>
+      <p>AI 综合你的薄弱点与课程高频考点，自动组卷。先做一次诊断，模拟卷会更精准。</p>
+    </div>
+    <div class="mock__box">
+      <div class="mock__controls">
+        <label>组卷依据</label>
+        <div class="mock__opts">
+          <label class="radio"><input type="radio" name="mockbasis" value="weak" checked /> 薄弱点优先</label>
+          <label class="radio"><input type="radio" name="mockbasis" value="mixed" /> 薄弱 + 高频混合</label>
+          <label class="radio"><input type="radio" name="mockbasis" value="full" /> 全章节均衡</label>
+        </div>
+        <label>题量</label>
+        <div class="mock__opts">
+          <label class="radio"><input type="radio" name="mockcount" value="15" checked /> 15 题</label>
+          <label class="radio"><input type="radio" name="mockcount" value="20" /> 20 题</label>
+          <label class="radio"><input type="radio" name="mockcount" value="30" /> 30 题</label>
+        </div>
+        <button class="btn btn--primary btn--lg" id="genMock">⚡ 生成我的模拟卷</button>
+      </div>
+      <div class="mock__paper" id="mockPaper">
+        <div class="mock__placeholder">点击左侧按钮，AI 将为你生成个性化考前模拟卷预览…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 自带题库 / 自定义刷题 ============ -->
+  <section class="section selfbank" id="selfbank">
+    <div class="section__head">
+      <span class="tag">自带题库 · 自定义刷题</span>
+      <h2>把你自己的题目丢进来，AI 帮你拆解知识点、出题复习</h2>
+      <p>粘贴你手头的题目（教材、往年卷、课堂笔记都行），智刷星自动分析每道题关联的知识点、总结出你的复习重点，并据此生成专属模拟卷，方便考前自测。</p>
+    </div>
+
+    <div class="sb">
+      <!-- 输入区 -->
+      <div class="sb__input-area">
+        <label class="sb__label" for="sbInput">粘贴你的题目（支持自由格式，自动识别题号 / 选项 / 答案）</label>
+        <textarea id="sbInput" class="sb__textarea" placeholder="示例格式：&#10;1. 物质的唯一特性是？&#10;A. 客观实在性  B. 运动  C. 可知性  D. 有用性&#10;【答案】A&#10;&#10;2. 新民主主义革命的主力军是？&#10;A. 农民  B. 资产阶级  C. 地主  D. 官僚&#10;答案：A"></textarea>
+        <div class="sb__hint">提示：每题之间空一行；选项以 A. / A、 / A) 开头；答案写“答案：X”或“【答案】X”即可被识别。自动分析基于平台已有的知识点词典，未识别到的可手动补标签。</div>
+        <div class="sb__actions">
+          <button class="btn btn--primary" id="sbAnalyze">🔍 本地快速分析</button>
+          <button class="btn btn--ai" id="sbAnalyzeLLM">🤖 AI 深度分析（LLM）</button>
+          <button class="btn btn--ghost" id="sbSample">填入示例</button>
+          <button class="btn btn--ghost" id="sbExamSample">填入概率论期末卷</button>
+          <button class="btn btn--ghost" id="sbExamReal">填入真实真题卷（2024-2025 A卷）</button>
+          <button class="btn btn--ghost" id="sbClear">清空</button>
+        </div>
+        <div class="sb__upload">
+          <input type="file" id="sbFile" accept="image/*,.pdf,.docx,.txt,.md,.csv" multiple hidden />
+          <button class="btn btn--outline" id="sbUploadBtn" type="button">📎 上传图片 / 文件（PDF·Word·图片）</button>
+          <span class="sb__upload-tip">支持多选；图片识别需配置视觉大模型，PDF / Word / TXT 无需配置即可解析</span>
+        </div>
+        <div class="sb__upload-preview" id="sbUploadPreview"></div>
+        <div class="sb__upload-status" id="sbUploadStatus"></div>
+        <div class="sb__mode-hint">「本地快速分析」基于平台知识点词典即时给出结果；「AI 深度分析」调用你本机配置的大模型，归纳更精准、并给出文字版复习总结（需在 <code>.env</code> 配置 Key，详见 <code>.env.example</code>）。</div>
+      </div>
+
+      <!-- 结果区 -->
+      <div class="sb__result hidden" id="sbResult">
+        <div class="sb__summary" id="sbSummary"></div>
+        <div class="sb__ai-wrap" id="sbAiSummary"></div>
+
+        <div class="sb__editor">
+          <h3 class="diag__title">逐题知识点（可增删标签）</h3>
+          <div id="sbQuestions"></div>
+        </div>
+
+        <div class="sb__mock">
+          <h3 class="diag__title">生成专属模拟卷</h3>
+          <div class="mock__controls">
+            <label>题量</label>
+            <div class="mock__opts">
+              <label class="radio"><input type="radio" name="sbcount" value="5" checked /> 5 题</label>
+              <label class="radio"><input type="radio" name="sbcount" value="10" /> 10 题</label>
+              <label class="radio"><input type="radio" name="sbcount" value="15" /> 15 题</label>
+            </div>
+            <label>出题范围</label>
+            <div class="mock__opts">
+              <label class="radio"><input type="radio" name="sbbasis" value="all" checked /> 全部随机</label>
+              <label class="radio"><input type="radio" name="sbbasis" value="focus" /> 仅我勾选的知识点</label>
+            </div>
+            <div id="sbKpFilter" class="sb__kpfilter hidden"></div>
+            <div class="mock__opts" style="gap:12px;flex-wrap:wrap">
+              <button class="btn btn--primary btn--lg" id="sbGenMock">🤖 AI 生成全新模拟卷</button>
+              <button class="btn btn--ghost" id="sbGenMockRaw" title="不调用大模型，把你导入的题随机抽取重排成卷">📋 原题重排（离线）</button>
+              <button class="btn btn--ghost" id="sbSave">💾 保存到本地</button>
+              <button class="btn btn--ghost" id="sbPrint">🖨️ 打印 / 导出 PDF</button>
+            </div>
+            <p class="sb__hint">AI 生成会按你识别出的薄弱知识点，由大模型现场原创出题（需配置 LLM Key，首次可能需十几秒）。未配置 Key 时自动回退为「原题重排」。</p>
+          </div>
+          <div class="mock__paper" id="sbMockPaper">
+            <div class="mock__placeholder">解析题目后，点击左侧按钮即可基于此批题目生成模拟卷…</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 团队 ============ -->
+  <section class="section team" id="team">
+    <div class="section__head">
+      <span class="tag">关于我们</span>
+      <h2>智刷队</h2>
+      <p>华中科技大学未来技术学院“创客训练营”课程组 · 创客竞赛选题团队</p>
+    </div>
+    <div class="team-grid">
+      <div class="member">
+        <div class="member__avatar">邓</div>
+        <h3>邓程浩</h3>
+        <span class="member__role">团队负责人</span>
+        <p>提出“知识图谱智能诊断”，主导选题定义与方案筛选。</p>
+      </div>
+      <div class="member">
+        <div class="member__avatar">何</div>
+        <h3>何志浩</h3>
+        <span class="member__role">核心成员</span>
+        <p>提出“AI 苏格拉底式讲题”与跨课程关联练习，打磨差异化亮点。</p>
+      </div>
+      <div class="member">
+        <div class="member__avatar">赵</div>
+        <h3>赵临枫</h3>
+        <span class="member__role">核心成员</span>
+        <p>提出语音交互速测与考前冲刺模拟卷，负责场景化体验设计。</p>
+      </div>
+    </div>
+    <div class="team__story">
+      <h3>我们的初心</h3>
+      <p>期末复习那几周，我们也曾在教材、搜题软件和笔记之间反复横跳，对着答案发呆却想不通思路。
+      智刷星想做的，不是又一个“题库”，而是一位真正懂你的 AI 学习伙伴——它知道你哪里不会，
+      在你卡住时陪你一步步想通。这，就是“智刷星”名字里那颗“星”的含义。</p>
+    </div>
+  </section>
+
+  <!-- ============ 技术 ============ -->
+  <section class="section tech" id="tech">
+    <div class="section__head">
+      <span class="tag">技术架构</span>
+      <h2>智刷星是怎么搭起来的</h2>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card"><div class="tech-card__k">前端</div><div class="tech-card__v">Web 端 + 小程序，触达门槛低，符合大学生使用习惯</div></div>
+      <div class="tech-card"><div class="tech-card__k">后端</div><div class="tech-card__v">Python Flask 原型，快速迭代 MVP</div></div>
+      <div class="tech-card"><div class="tech-card__k">知识图谱</div><div class="tech-card__v">Neo4j / JSON 存储，表达知识点间关联</div></div>
+      <div class="tech-card"><div class="tech-card__k">AI 能力</div><div class="tech-card__v">大语言模型驱动引导式对话与个性化组卷</div></div>
+      <div class="tech-card"><div class="tech-card__k">推荐</div><div class="tech-card__v">协同过滤 + 知识图谱推荐，动态强化薄弱点</div></div>
+      <div class="tech-card"><div class="tech-card__k">安全</div><div class="tech-card__v">学习数据加密存储，仅用于个性化，不对外共享</div></div>
+    </div>
+    <div class="tech__eval">
+      <h3>对应创客竞赛评审维度</h3>
+      <div class="eval-grid">
+        <div class="eval"><b>创造性 10%</b><span>知识图谱 + 引导式讲题，聚焦专业课垂直领域</span></div>
+        <div class="eval"><b>实用性 40%</b><span>500 万理工科用户，刚需强、迁移意愿高</span></div>
+        <div class="eval"><b>安全性 20%</b><span>数据加密、版权合规、AI 内容审核</span></div>
+        <div class="eval"><b>深度性 15%</b><span>多技术融合，从刷题工具升级为学习伙伴</span></div>
+        <div class="eval"><b>规范性 15%</b><span>符合在线教育规范，界面简洁无障碍</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 页脚 CTA ============ -->
+  <section class="cta">
+    <div class="cta__inner">
+      <h2>让每位理工科学生，都拥有专属的 AI 学习伙伴</h2>
+      <p>现在就体验知识图谱诊断，找到你真正该刷的题。</p>
+      <a href="#diagnose" class="btn btn--primary btn--lg">免费开始诊断 →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="brand__name">智刷星</span>
+        <p>AI 专业课智能刷题平台 · 创客竞赛选题设计</p>
+      </div>
+      <div class="footer__meta">
+        <p>团队：智刷队（邓程浩 · 何志浩 · 赵临枫）</p>
+        <p>华中科技大学未来技术学院 · 创客训练营</p>
+        <p class="footer__note">本网站为基于选题设计报告制作的演示原型，题目与图谱为示例数据。</p>
+      </div>
+    </div>
+    <div class="footer__bar">© 2026 智刷星 Zhishua Star · 演示原型</div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
